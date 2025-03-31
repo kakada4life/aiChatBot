@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <span class="header-text">AI Chatbot</span>
+    </div>
+    <ul>
+        <li onclick="newChat()">New Chat</li>
+        <li onclick="showAbout()">About</li>
+    </ul>
+    <div style="position: absolute; bottom: 20px; width: 100%; text-align: center;">
+        <li onclick="showSettings()" style="padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Settings</li>
+    </div>
+</div>
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="settings-modal" style="display:none;">
+    <div class="settings-content">
+        <span onclick="closeSettings()" class="close-btn">×</span>
+        <h3>Settings</h3>
+        <div>
+            <label>Language:</label>
+            <button onclick="changeLanguage('kh')">Khmer</button>
+            <button onclick="changeLanguage('en')">English</button>
+        </div>
+        <div>
+            <label>Theme:</label>
+            <button onclick="toggleDarkLight()">Toggle Dark/Light Mode</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="content" id="content">
+    <div class="topbar">
+        <span class="toggle-btn" onclick="toggleSidebar()">☰</span>
+        <img src="{{ url_for('static', filename='logo/rupp.png') }}" alt="Logo" style="width: 40px; height: auto; margin-right: 15px;">
+        <h2>AI Chatbot</h2>
+    </div>
+
+    <div class="chat-window" id="chatWindow"></div>
+    <div class="placeholder-message" id="placeholderMessage">What’s on your mind?</div>
+
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Type here..." onkeydown="if(event.key==='Enter') sendMessage()">
+        <button id="start-recording" class="round-button">
+            <i class="fa-solid fa-microphone" style="font-size: 20px;"></i>
+        </button>
+        <button id="stop-recording" class="round-button" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
