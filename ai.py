@@ -14,8 +14,8 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads/'
 
 # Set your Google Translate API Key (replace with actual key)
-API_KEY = 'AIzaSyB7K5gZJGE0sR_4adpxkudJVc2Mhh1wzSs'
-TRANSLATE_URL = "https://translation.googleapis.com/language/translate/v2"
+API_KEY = 'Your-API'
+TRANSLATE_URL = "Your-google translate URL"
 
 
 def detect_language(text):
