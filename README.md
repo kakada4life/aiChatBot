@@ -1,0 +1,1 @@
+this code is a project about a chatbot which i use gemma:2b as my ai chat model from ollama and also using google translate and google stt in order to make a chat bot that can finally understand my language (which is khmer) and that about it. I'm planning to build my own stt and tts but it going to be later  
